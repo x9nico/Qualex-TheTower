@@ -67,7 +67,7 @@ public class TeamSystem {
             t.removePlayer(pl);
         }
         this.team.addPlayer(pl);
-        pl.sendMessage(ChatColor.AQUA + "Vous avez �t� ajout� � la team " + this.name);
+        pl.sendMessage(ChatColor.AQUA + "Vous avez été ajouté à la team " + this.name);
         setArmorTeam(pl.getPlayer());
         if (!this.game.running) {
             pl.teleport(this.lobby);
@@ -122,8 +122,8 @@ public class TeamSystem {
     {
         pl.teleport(this.spawn);
         this.pts += 1;
-        Bukkit.broadcastMessage("§6§lL'équipe " + this.name + " §6§lmarque un point. (�1�l" + Integer.toString(this.game.equipeBlue.pts) +
-                "§6§l/§c§l" + Integer.toString(this.game.equipeRed.pts) + "�6�l)");
+        Bukkit.broadcastMessage("§6§lL'équipe " + this.name + " §6§lmarque un point. (§1§l" + Integer.toString(this.game.equipeBlue.pts) +
+                "§6§l/§c§l" + Integer.toString(this.game.equipeRed.pts) + "§6§l)");
         for (Player ap : Bukkit.getOnlinePlayers()) {
             ap.playSound(ap.getLocation(), Sound.NOTE_PIANO, 1.0F, 1.0F);
         }
@@ -136,7 +136,7 @@ public class TeamSystem {
 
     public void win(final TeamSystem e)
     {
-        Bukkit.broadcastMessage(ChatColor.GREEN + "L'�quipe " + this.team.getDisplayName() + ChatColor.GREEN + " a gagn� !");
+        Bukkit.broadcastMessage(ChatColor.GREEN + "L'équipe " + this.team.getDisplayName() + ChatColor.GREEN + " a gagné !");
         this.game.stop(this.game.m.getConfig().getInt("Timers.EndTimer") * 20);
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this.game.m, new Runnable()
         {

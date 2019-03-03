@@ -1,0 +1,95 @@
+Daylightcycle: true
+Armors_drop: false
+CanOpenAdverseChests: false
+NaturalRegeneration: true
+Worlds:
+  WorldSpawn: Spawn
+  Pvp_on_WorldSpawn: false
+  Build_on_WorldSpawn: false
+  BungeeCoord_Support: true
+  BungeeCoord_Lobby_Server: lobby
+Teams:
+  MaxPlayersPerTeams: 6
+  Run_auto: true
+  TeamJoinAfterStart: false
+Timers:
+  StartTimer: 10
+  EndTimer: 15
+Scoreboard:
+  Title: The Towers
+  Points: 10
+  Enabled : true
+Motd:
+  Enabled : false
+Menu:
+  Item: 370
+  Title: "Choisir une équipe"
+  Position: 4
+Coordinates:
+  Waitrooms:
+    Blue:
+      x: -29
+      y: 64
+      z: 991
+    Red:
+      x: 29
+      y: 64
+      z: 992
+  Lobby:
+    x: 0
+    y: 64
+    z: 1023
+    yaw: 0.0
+  Spawns:
+    Blue:
+      x: -84
+      y: 192
+      z: 1152
+      yaw: -90.0
+    Red:
+      x: 84
+      y: 192
+      z: 1152
+      yaw: -270.0
+    SpectatorSpawn:
+      x: 0
+      y: 208
+      z: 1152
+  Pools:
+    red:
+      '1':
+        x: 83
+        y: 200
+        z: 1153
+      '2':
+        x: 85
+        y: 200
+        z: 1151
+    blue:
+      '1':
+        x: -85
+        y: 200
+        z: 1153
+      '2':
+        x: -83
+        y: 200
+        z: 1151
+  Regions:
+    Blue:
+      '1':
+        x: -26
+        y: 187
+        z: 1174
+      '2':
+        x: -89
+        y: 208
+        z: 1130
+    Red:
+      '1':
+        x: 89
+        y: 214
+        z: 1173
+      '2':
+        x: 29
+        y: 190
+        z: 1130

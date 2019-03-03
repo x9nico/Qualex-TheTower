@@ -1,0 +1,11 @@
+name: TheTowers
+author: x9nico
+main: fr.omegaserv.tower.TheTowerPlugin
+version: 1.0
+commands:
+  towers:
+    permission: towers.admin
+    description: towers
+  tw:
+    permission: towers.admin
+    description: toweers

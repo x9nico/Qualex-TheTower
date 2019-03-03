@@ -91,7 +91,7 @@ public class GameManager
         this.running = false;
         this.secondes = Integer.valueOf(0).intValue();
         this.minutes = Integer.valueOf(0).intValue();
-        Bukkit.broadcastMessage(ChatColor.GREEN + "La partie est termin�e.");
+        Bukkit.broadcastMessage(ChatColor.GREEN + "La partie est terminée.");
         for (Player ap : this.m.world.getPlayers())
         {
             ap.setGameMode(GameMode.CREATIVE);
