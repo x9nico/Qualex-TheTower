@@ -178,6 +178,13 @@ public class TheTowerPlugin extends JavaPlugin implements Listener {
         this.world.setGameRuleValue("naturalRegeneration", getConfig().getString("NaturalRegeneration"));
     }
 
+    public void connect(Player player, String server){
+        ByteArrayDataOutput out = ByteStreams.newDataOutput();
+        out.writeUTF("Connect");
+        out.writeUTF(server);
+        player.sendPluginMessage(this, "BungeeCord", out.toByteArray());
+    }
+
     public void error()
     {
         getLogger().warning("Desactivation du plugin TheTowers Reloaded");
@@ -219,7 +226,6 @@ public class TheTowerPlugin extends JavaPlugin implements Listener {
         for (Team tm : this.game.sc.getTeams()) {
             tm.removePlayer(pl);
         }
-        this.game.spectators.remove(pl);
         pl.sendMessage(ChatColor.RED + "Vous ne faites désormais plus partie de l'équipe.");
         pl.teleport(this.lobby);
         pl.setDisplayName(pl.getName());

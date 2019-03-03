@@ -33,7 +33,6 @@ public class GameManager
     public boolean pause = false;
     public boolean running = false;
     private NumberFormat format = new DecimalFormat("00");
-    public List<Player> spectators = new ArrayList();
     public Scoreboard sc;
     public Score redpts;
     public Score bluepts;
@@ -174,14 +173,6 @@ public class GameManager
                 {
                     GameManager.this.compte -= 1;
                     Bukkit.broadcastMessage(ChatColor.GREEN + "La partie démarre.");
-                    for (Player pl : GameManager.this.spectators) {
-                        if (pl.isOnline())
-                        {
-                            pl.setGameMode(GameMode.SPECTATOR);
-                            pl.getInventory().clear();
-                            pl.teleport(GameManager.this.m.middle);
-                        }
-                    }
                     GameManager.this.equipeBlue.startPlayers();
                     GameManager.this.equipeRed.startPlayers();
 
@@ -229,9 +220,6 @@ public class GameManager
             pl.add(ap);
         }
         for (Player ap : this.equipeRed.getPlayers()) {
-            pl.add(ap);
-        }
-        for (Player ap : this.spectators) {
             pl.add(ap);
         }
         return pl;

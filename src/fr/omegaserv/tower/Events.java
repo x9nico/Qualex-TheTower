@@ -227,12 +227,14 @@ public class Events implements Listener {
         }
         if ((!this.main.game.running) && (pl.getWorld() == this.main.world)) {
             pl.teleport(this.main.lobby);
+            pl.getInventory().setItem(8, new ItemBuilder(Material.BED).setName("§6Retour au Hub").toItemStack());
         }
         if (!pl.hasPlayedBefore())
         {
             pl.setGameMode(GameMode.SURVIVAL);
             pl.teleport(this.main.lobby);
             pl.getInventory().setItem(this.main.getConfig().getInt("Menu.Position"), this.main.menu.itemMenu);
+            pl.getInventory().setItem(8, new ItemBuilder(Material.BED).setName("§6Retour au Hub").toItemStack());
             pl.getInventory().setHeldItemSlot(this.main.getConfig().getInt("Menu.Position"));
             ItemStack[] arrayOfItemStack;
             int j = (arrayOfItemStack = pl.getInventory().getArmorContents()).length;
@@ -246,6 +248,19 @@ public class Events implements Listener {
         {
             pl.getInventory().setItem(this.main.getConfig().getInt("Menu.Position"), this.main.menu.itemMenu);
             pl.getInventory().setHeldItemSlot(this.main.getConfig().getInt("Menu.Position"));
+            pl.getInventory().setItem(8, new ItemBuilder(Material.BED).setName("§6Retour au Hub").toItemStack());
+        }
+    }
+
+    @EventHandler
+    public void interact(PlayerInteractEvent e){
+        Player p = e.getPlayer();
+        if(e.getItem() != null){
+            if(e.getItem().getType() == Material.BED){
+                if(e.getAction() == Action.RIGHT_CLICK_AIR){
+                    this.main.connect(p, this.main.getConfig().getString("Worlds.BungeeCord_Lobby_Server"));
+                }
+            }
         }
     }
 
