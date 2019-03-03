@@ -378,7 +378,7 @@ public class TowersCommandExecutor implements CommandExecutor, TabCompleter {
                     this.main.getConfig().set("Coordinates.Spawns.Red.yaw", Float.valueOf(locpl.getYaw()));
                     this.main.saveConfig();
                     this.main.redspawn = locpl;
-                    pl.sendMessage("�cCoordonn�es du spawn Red enregistr�es : �b�l" + locpl.getBlockX() + " �c/ �b�l" + locpl.getBlockY() + " �c/ �b�l" + locpl.getBlockZ() + " �csur �b�l" + this.main.world.getName());
+                    pl.sendMessage("§cCoordonnées du spawn Red enregistrées : §b§l" + locpl.getBlockX() + " §c/ §b§l" + locpl.getBlockY() + " §c/ §b§l" + locpl.getBlockZ() + " §csur §b§l" + this.main.world.getName());
                 }
                 else
                 {
