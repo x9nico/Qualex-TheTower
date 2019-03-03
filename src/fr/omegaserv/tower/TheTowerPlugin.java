@@ -220,7 +220,7 @@ public class TheTowerPlugin extends JavaPlugin implements Listener {
             tm.removePlayer(pl);
         }
         this.game.spectators.remove(pl);
-        pl.sendMessage(ChatColor.RED + "Vous ne faîtes désormais plus partie de l'équipe.");
+        pl.sendMessage(ChatColor.RED + "Vous ne faites désormais plus partie de l'équipe.");
         pl.teleport(this.lobby);
         pl.setDisplayName(pl.getName());
         pl.getActivePotionEffects().clear();

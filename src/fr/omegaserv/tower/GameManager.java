@@ -209,16 +209,17 @@ public class GameManager
     {
         this.title.unregister();
         this.title = this.sc.registerNewObjective("Sidebar", "dummy");
-        this.ScTitle = this.m.getConfig().getString("Scoreboard.Title");
+        this.ScTitle = this.m.getConfig().getString("Scoreboard.Title").replace("&", "§");
         this.title.setDisplayName(this.ScTitle);
         this.title.setDisplaySlot(DisplaySlot.SIDEBAR);
-        this.title.getScore(this.format.format(this.minutes) + ":" + this.format.format(this.secondes)).setScore(1);
+        this.title.getScore(this.m.getConfig().getString("Scoreboard.ip").replace("&", "§")).setScore(1);
+        this.title.getScore(this.format.format(this.minutes) + ":" + this.format.format(this.secondes)).setScore(3);
         this.title.getScore(ChatColor.RED + "  ").setScore(5);
         this.title.getScore(ChatColor.RED + " ").setScore(2);
         this.title.getScore(ChatColor.RED+"").setScore(6);
-        this.title.getScore(ChatColor.RED + "Rouge : " + ChatColor.WHITE + this.equipeRed.pts).setScore(4);
-        this.title.getScore(ChatColor.BLUE + "Bleue : " + ChatColor.WHITE + this.equipeBlue.pts).setScore(3);
-        this.title.getScore(ChatColor.YELLOW + "Points : " + Integer.toString(this.maxPoints)).setScore(5);
+        this.title.getScore(ChatColor.RED + "Rouge : " + ChatColor.WHITE + this.equipeRed.pts).setScore(6);
+        this.title.getScore(ChatColor.BLUE + "Bleue : " + ChatColor.WHITE + this.equipeBlue.pts).setScore(5);
+        this.title.getScore(ChatColor.YELLOW + "Points : " + Integer.toString(this.maxPoints)).setScore(7);
     }
 
     public ArrayList<Player> getPlayers()

@@ -16,9 +16,10 @@ Timers:
   StartTimer: 10
   EndTimer: 15
 Scoreboard:
-  Title: The Towers
+  Title: "&e&lThe Towers"
   Points: 10
   Enabled : true
+  ip: "&6play.x9nico.fr"
 Motd:
   Enabled : false
 Menu:

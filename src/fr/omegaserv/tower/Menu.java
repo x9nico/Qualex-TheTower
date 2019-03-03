@@ -60,7 +60,7 @@ public class Menu
 
         ItemStack quitter = new ItemStack(Material.REDSTONE);
         ItemMeta metaquitter = quitter.getItemMeta();
-        metaquitter.setDisplayName(ChatColor.GREEN + "Quitter l'�quipe.");
+        metaquitter.setDisplayName(ChatColor.GREEN + "Quitter l'équipe.");
         quitter.setItemMeta(metaquitter);
         this.invMenu.setItem(3, quitter);
     }
@@ -95,7 +95,7 @@ public class Menu
                 case 1:
                     if ((!this.main.game.running) || (this.main.getConfig().getBoolean("Teams.TeamJoinAfterStart"))) {
                         if (this.main.game.equipeBlue.team.getSize() >= this.main.MaxPlayersTeam) {
-                            pl.sendMessage(ChatColor.DARK_BLUE + "Cette �quipe est compl�te.");
+                            pl.sendMessage(ChatColor.DARK_BLUE + "Cette équipe est complète.");
                         } else {
                             this.main.game.equipeBlue.addPlayer(pl);
                         }
@@ -104,7 +104,7 @@ public class Menu
                 case 0:
                     if ((!this.main.game.running) || (this.main.getConfig().getBoolean("Teams.TeamJoinAfterStart"))) {
                         if (this.main.game.equipeRed.team.getSize() >= this.main.MaxPlayersTeam) {
-                            pl.sendMessage(ChatColor.DARK_RED + "Cette �quipe est compl�te.");
+                            pl.sendMessage(ChatColor.DARK_RED + "Cette équipe est complète.");
                         } else {
                             this.main.game.equipeRed.addPlayer(pl);
                         }
