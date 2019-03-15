@@ -101,10 +101,12 @@ public class Events implements Listener {
             try
             {
                 e.setDeathMessage(pl.getDisplayName() + " a été tué(e) par " + plk.getName() + " .");
+                pl.spigot().respawn();
             }
             catch (Exception except)
             {
                 e.setDeathMessage(pl.getDisplayName() + " est mort.");
+                pl.spigot().respawn();
             }
         }
         if (!this.main.getConfig().getBoolean("Armors_drop")) {
