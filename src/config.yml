@@ -19,12 +19,12 @@ Scoreboard:
   Title: "&e&lThe Towers"
   Points: 10
   Enabled : true
-  ip: "&6play.x9nico.fr"
+  ip: "&6play.azoltcraft.com"
 Motd:
   Enabled : false
 Menu:
   Item: 370
-  Title: "Choisir une équipe"
+  Title: "Choisir une team"
   Position: 4
 Coordinates:
   Waitrooms:

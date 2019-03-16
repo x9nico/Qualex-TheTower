@@ -23,9 +23,8 @@ import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.scoreboard.Team;
 
-public class Menu
-        implements Listener
-{
+public class Menu implements Listener {
+
     public Scoreboard sc = Bukkit.getScoreboardManager().getMainScoreboard();
     private TheTowerPlugin main = null;
     public ItemStack itemMenu;
