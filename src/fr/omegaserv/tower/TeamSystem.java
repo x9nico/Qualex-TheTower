@@ -61,8 +61,7 @@ public class TeamSystem {
         this.team.setAllowFriendlyFire(false);
     }
 
-    public void addPlayer(Player pl)
-    {
+    public void addPlayer(Player pl) {
         for (Team t : this.game.sc.getTeams()) {
             t.removePlayer(pl);
         }
@@ -77,8 +76,7 @@ public class TeamSystem {
         pl.setDisplayName(this.chatColor + pl.getDisplayName() + ChatColor.RESET);
     }
 
-    public boolean isInTeam(Player pl)
-    {
+    public boolean isInTeam(Player pl){
         for (OfflinePlayer op : this.team.getPlayers()) {
             if (pl.getPlayer().equals(op)) {
                 return true;
@@ -87,8 +85,7 @@ public class TeamSystem {
         return false;
     }
 
-    public void setArmorTeam(Player pl)
-    {
+    public void setArmorTeam(Player pl) {
         ItemStack chest = new ItemStack(Material.LEATHER_CHESTPLATE);
         LeatherArmorMeta meta = (LeatherArmorMeta)chest.getItemMeta();
         meta.setColor(this.dyeColor.getColor());
@@ -96,11 +93,9 @@ public class TeamSystem {
         pl.getInventory().setChestplate(chest);
     }
 
-    public void startPlayers()
-    {
+    public void startPlayers() {
         for (OfflinePlayer pl : this.team.getPlayers()) {
-            if (pl.isOnline())
-            {
+            if (pl.isOnline()) {
                 Player pla = (Player)pl;
                 pla.setExp(0.0F);
                 pla.setHealth(20.0D);
@@ -118,8 +113,7 @@ public class TeamSystem {
         }
     }
 
-    public void addPoint(Player pl)
-    {
+    public void addPoint(Player pl) {
         pl.teleport(this.spawn);
         this.pts += 1;
         Bukkit.broadcastMessage("§6§lL'équipe " + this.name + " §6§lmarque un point. (§1§l" + Integer.toString(this.game.equipeBlue.pts) +
@@ -134,14 +128,11 @@ public class TeamSystem {
         }
     }
 
-    public void win(final TeamSystem e)
-    {
+    public void win(final TeamSystem e) {
         Bukkit.broadcastMessage(ChatColor.GREEN + "L'équipe " + this.team.getDisplayName() + ChatColor.GREEN + " a gagné !");
         this.game.stop(this.game.m.getConfig().getInt("Timers.EndTimer") * 20);
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(this.game.m, new Runnable()
-        {
-            public void run()
-            {
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(this.game.m, new Runnable() {
+            public void run() {
                 for (OfflinePlayer op : e.team.getPlayers()) {
                     if (op.isOnline()) {
                         FireworkEffect fre = FireworkEffect.builder().flicker(true).withColor(e.c).withFade(Color.PURPLE).with(FireworkEffect.Type.STAR).trail(true).build();
@@ -156,11 +147,9 @@ public class TeamSystem {
         }, 20L, 20L);
     }
 
-    public void stuffPlayer(final Player pl)
-    {
+    public void stuffPlayer(final Player pl) {
         pl.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 300, 1));
-        this.game.m.getServer().getScheduler().scheduleSyncDelayedTask(this.game.m, new Runnable()
-        {
+        this.game.m.getServer().getScheduler().scheduleSyncDelayedTask(this.game.m, new Runnable() {
             public void run()
             {
                 pl.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 300, 1));
@@ -196,15 +185,13 @@ public class TeamSystem {
         pl.getInventory().setLeggings(leggings);
     }
 
-    public int getSize()
-    {
+    public int getSize() {
         int s = 0;
 
         return s;
     }
 
-    public ArrayList<Player> getPlayers()
-    {
+    public ArrayList<Player> getPlayers() {
         ArrayList<Player> l = new ArrayList();
         for (OfflinePlayer op : this.team.getPlayers()) {
             l.add(op.getPlayer());
@@ -212,8 +199,7 @@ public class TeamSystem {
         return l;
     }
 
-    public ArrayList<String> getPlayersName()
-    {
+    public ArrayList<String> getPlayersName() {
         ArrayList<String> n = new ArrayList();
         for (OfflinePlayer op : this.team.getPlayers()) {
             n.add(op.getName());
