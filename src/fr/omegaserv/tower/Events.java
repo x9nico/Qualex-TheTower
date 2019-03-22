@@ -258,7 +258,7 @@ public class Events implements Listener {
         if(e.getItem() != null){
             if(e.getItem().getType() == Material.BED){
                 if(e.getAction() == Action.RIGHT_CLICK_AIR){
-                    this.main.connect(p, this.main.getConfig().getString("Worlds.BungeeCord_Lobby_Server"));
+                    this.main.connect(p, "lobby");
                 }
             }
         }
